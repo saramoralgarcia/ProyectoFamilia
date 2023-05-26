@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+              crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css"
+    </head>
+    <body style="background-color: #f4c624">
+        <h1 class="text-center p-3 m-2 h">HEY YOU</h1>
+        <div class="container my-5">
+            <img class="rounded mx-auto d-block w-25" src="./amigos.png" alt="alt"/>
+            <div class=" text-center p-3 m-2">
+            <p class="tracking-in-contract-bck">Las familias modernas tienen horarios cada vez más complejos y ocupados,
+                y estar al día con las tareas cotidianas  y 
+                las responsabilidades de cada miembro puede ser un desafío.</p>
+                <p>¿Estás preparado para cambiar?</p>
+            <a th:href="@{/opcionRegistro}" class="btn btn-dark">Registrarte</a>
+            <a th:href="@{/iniciarSesion}"  class="bnt m-2" >
+            <button type="submit" class="btn btn-dark">Iniciar Sesion</button>
+        </a>
+        </div>
+        
+    </body>
+</html>

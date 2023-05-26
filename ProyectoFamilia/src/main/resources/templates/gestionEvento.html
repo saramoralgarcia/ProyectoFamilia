@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>TODO supply a title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ 
+</head>
+
+<body style="background-color: #f4c624">
+    <div th:replace="./Basic/navbar.html"></div>
+
+      <div class="container my-2">
+          <h1 class="text-center" style="font-family: superBubble">Lista de Eventos</h1>
+          <a th:href = "@{/altaTarea}" class="btn btn-primary my-2" style="background: #917FB3; border: 0px" b>Añadir Evento</a>
+          <table class="table table-striped table-responsive-md">
+              <thead>
+                  <tr>
+                      <th> Nombre </th>
+                      <th> Fecha </th>
+                      <th> Puntos </th>
+                      <th> Descripción </th>
+                      <th> Eliminar </th>
+                      <th> Modificar </th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr th:each="tarea : ${listaTareas}">
+                      <td th:text="${tarea.Nombre}"></td>
+                      <td th:text="${tarea.Fecha}"></td>
+                      <td th:text="${tarea.Puntos}"></td>
+                      <td th:text="${tarea.Descripcion}"></td>
+
+                      <td> 
+                          <a th:href="@{/eliminarTarea/{id_tarea}(id_tarea=${tarea.id})}" class="btn btn-danger" role="button"> Eliminar</a></td>
+                      <td> <a th:href="@{/modificarTarea/{id_tarea}(id_tarea=${tarea.id.toString()})}" class="btn btn-primary" role="button"> Modificar  </a></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+</body>
+</html>

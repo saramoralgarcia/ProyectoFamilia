@@ -1,0 +1,113 @@
+
+@font-face {
+  font-family: 'superBubble';
+  src: url('./superBubble.ttf') format('truetype');
+}
+.navbar{ 
+    background-color: #FAF8F1;  
+}
+.h{
+    
+    font-family: superBubble;
+    text-transform: uppercase;
+    text-align: center;
+   letter-spacing: 15px;
+   font-size: 70px
+}
+.navbar{
+    
+    justify-content: center;
+    letter-spacing: 5px;
+    background-color: transparent;
+    --bs-bg-opacity: #FAF8F1;
+}
+body{
+    background-color: #FAF8F1;
+    font-family: 'Comfortaa Bold Alt2';
+}
+.nav-item{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 19px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+.card-img-custom {
+  width: 100%;
+  height: 250px; /* Ajusta la altura deseada */
+  object-fit: cover;
+}
+
+img-button {
+  width: 32px; /* Ajusta el ancho según tus necesidades */
+  height: 32px; /* Ajusta la altura según tus necesidades */
+}
+
+.container-principal{
+    display: flex;
+    margin-top: 50px;
+}
+
+.letter{
+    font-family: superBubble;
+}
+
+.tracking-in-contract-bck {
+	-webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-contract-bck 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+
+/**
+ * ----------------------------------------
+ * animation letras pagina login
+ * ----------------------------------------
+ */
+@-webkit-keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+
+    <body style="background-color: #f4c624">
+        <div th:replace="./Basic/navbar.html"></div>
+        <div class="container my-2">
+            <h1 class="text-center" style="font-family: superBubble">Lista de Tareas</h1>
+            <a th:href = "@{/altaTarea}" >
+                <img src="añadirTarea.png" alt="Añadir Miembros" class="img-button p-2" style="height: 80px">
+                </a>
+            <table class="table table-striped table-responsive-md">
+                <thead>
+                    <tr>
+                        <th> Nombre </th>
+                        <th> Fecha </th>
+                        <th> Puntos </th>
+                        <th> Descripción </th>
+                        <th> Asignación </th>
+                        <th> Eliminar </th>
+                        <th> Modificar </th>
+                        <th> Realización </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="tarea : ${listaTareas}">
+                        <td th:text="${tarea.Nombre}"></td>
+                        <td th:text="${tarea.Fecha}"></td>
+                        <td th:text="${tarea.Puntos}"></td>
+                        <td th:text="${tarea.Descripcion}"></td>
+                        <td th:text="${tarea.miembro != null ? tarea.miembro.nombre : 'Sin Asignar'}"></td> <!--si la tarea es nula mostrara una cadena vacia si esta llena mostrará el nombre del miembro.-->
+
+                        <td> 
+                            <a th:href="@{/eliminarTarea/{id_tarea}(id_tarea=${tarea.id})}" role="button"> 
+                                <img src="eliminar.png" alt="eliminar tarea" class="img-button p-2" style="height: 50px">
+                            </a>
+                        </td>
+                        <td> 
+                            <a th:href="@{/modificarTarea/{id_tarea}(id_tarea=${tarea.id.toString()})}" role="button"> 
+                                <img src="modificar.png" alt="modificar tarea" class="img-button p-2" style="height: 50px">
+                            </a>
+                        </td>
+                        <td th:if ="${tarea.miembro != null}" >
+                            <a th:href="@{/realizarTarea/{id_tarea}(id_tarea=${tarea.id})}" role="button">
+                                <img src="hacer.png" alt="hacer tarea" class="img-button p-2" style="height: 50px">
+                            </a>
+                        </td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+
+</html>

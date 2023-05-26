@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css"
+    </head>
+
+    <body style="background-color: #f4c624">
+        <div class="m-5">
+            <img src="./amigos.png" alt="familia" width="10%">
+
+            <h1 class="text-center h">Iniciar Sesión</h1>
+        </div>
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-6 col-12 mx-auto">
+                    <form class="row g-3" action="#" th:action="@{/AccesoMiembro}" method="POST">
+                        <div class="col-12 pt-2">
+                            <label class="form-label pl-2">Introduce el Email</label>
+                            <input type="text" class="form-control" th:name="email">
+
+                        </div>
+                        
+                        <div th:if="${passIncorrecta}" class="alert alert-danger " role="alert">
+                            Contraseña incorrecta, por favor inténtalo de nuevo.
+                        </div>
+                        <fieldset  class="form-group col-12 pt-2" th:classappend="${passIncorrecta} ? 'has-error' : ''">
+                            <label class="form-label pl-2">Introduce la contraseña</label>
+                            <input type="password" class="form-control" th:name="contraseña">
+                            <div th:if="${passIncorrecta}" class="text-danger">Contraseña incorrecta, por favor inténtalo de nuevo.</div>
+
+                        </fieldset>
+
+
+                        <div class="col-12 pt-4">
+                            <button type="submit" class="btn btn-dark">Validar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

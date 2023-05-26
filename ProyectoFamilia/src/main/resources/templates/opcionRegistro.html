@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./style.css"
+
+  </head>
+
+  <body style="background-color: #f4c624">
+      <div class="mx-auto">
+      <h1 class="text-center p-3 m-2 h">HEY YOU</h1>
+        <div class="container my-5">
+            <img class="rounded mx-auto d-block w-25" src="./amigos.png" alt="alt"/>
+            <div class=" text-center p-3 m-2">
+            <h1 class="text-center tracking-in-contract-bck">¿Ya tienes familia?</h1>
+            <a th:href="@{/altaMiembroConFamilia}" class="btn btn-dark my-3">Si</a>
+            <a th:href="@{/registroInicial}"  class="bnt m-2" >
+            <button type="submit" class="btn btn-dark">No</button>
+        </a>
+        </div>
+    </div>
+      </div>
+  </body>
+</html>
